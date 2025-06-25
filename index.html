@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>HACKED BY MR.M05T3R</title>
+  <link rel="icon" href="https://i.ibb.co/G3t7BNSx/n.png">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: "Courier New", monospace;
+    }
+
+    body {
+      background: black;
+      color: #fff;
+      text-align: center;
+      padding: 30px 15px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      min-height: 100vh;
+    }
+
+    .glitch {
+      font-size: 2em;
+      position: relative;
+      color: white;
+      text-shadow: 0 0 5px red, 0 0 10px red, 0 0 15px red;
+      animation: glitch 1s infinite;
+    }
+
+    @keyframes glitch {
+      0% { transform: translate(0); }
+      20% { transform: translate(-1px, 1px); }
+      40% { transform: translate(-2px, -1px); }
+      60% { transform: translate(1px, 2px); }
+      80% { transform: translate(2px, -1px); }
+      100% { transform: translate(0); }
+    }
+
+    img.logo {
+      width: 250px;
+      animation: rotate 30s linear infinite;
+      margin: 20px 0;
+    }
+
+    @keyframes rotate {
+      from { transform: rotate(0deg); }
+      to { transform: rotate(-360deg); }
+    }
+
+    .info, .greets, .countdown, .geo, .time {
+      margin: 10px 0;
+      font-size: 1em;
+      max-width: 800px;
+    }
+
+    .greets {
+      color: red;
+      line-height: 1.6em;
+    }
+
+    .time, .geo, .countdown {
+      color: #0f0;
+      font-weight: bold;
+      text-shadow: 0 0 10px lime;
+    }
+
+    audio {
+      margin-top: 20px;
+    }
+
+    @media (max-width: 600px) {
+      .glitch { font-size: 1.5em; }
+      img.logo { width: 180px; }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="glitch">HACKED BY MR.M05T3R</div>
+
+  <img src="https://i.ibb.co/G3t7BNSx/n.png" alt="NEWBIE CYBER SECURITY Logo" class="logo">
+
+  <div class="info">[+] COUP BY TEAM NEWBIE CYBER SECURITY [+]</div>
+  <div class="info">[+] SOURCE CODE BY : RAMAFOUNDERNCS [+]</div>
+
+  <div class="countdown">Hack countdown: <span id="countdown">Loading...</span></div>
+  <div class="time">Local Time: <span id="time"></span></div>
+  <div class="geo">Your IP Info: <span id="geo">Detecting...</span></div>
+
+  <div class="greets">
+    POWERED BY:<br>
+    | MR.M05T3R | INDRA XPLOIT NCS | GHOSTCLONET77 | FAKEWORLD | RAMAFOUNDERNCS | N0B1T4 | MR ALI LCFR019 | BULLYXPLOIT |
+    <br><br>
+    | ALL MEMBER NEWBIE CYBER SECURITY - PASURUAN SECTEAM - DORAEMON CYBER TEAM |
+  </div>
+
+  <audio autoplay loop>
+    <source src="https://l.top4top.io/m_342514jhj1.mp3" type="audio/mpeg">
+    Browser not supported.
+  </audio>
+
+  <script>
+    // Live Clock
+    setInterval(() => {
+      const now = new Date();
+      document.getElementById("time").textContent = now.toLocaleString();
+    }, 1000);
+
+    // Countdown
+    const targetDate = new Date();
+    targetDate.setHours(targetDate.getHours() + 1);
+    function updateCountdown() {
+      const now = new Date().getTime();
+      const distance = targetDate.getTime() - now;
+
+      if (distance < 0) {
+        document.getElementById("countdown").textContent = "Hack Complete";
+        return;
+      }
+
+      const mins = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+      const secs = Math.floor((distance % (1000 * 60)) / 1000);
+
+      document.getElementById("countdown").textContent = `${mins}m ${secs}s`;
+    }
+    setInterval(updateCountdown, 1000);
+    updateCountdown();
+
+    // GeoIP Lookup
+    fetch("https://ipapi.co/json/")
+      .then(res => res.json())
+      .then(data => {
+        document.getElementById("geo").textContent = `${data.ip} - ${data.city}, ${data.country_name}`;
+      })
+      .catch(() => {
+        document.getElementById("geo").textContent = "Unknown";
+      });
+  </script>
+</body>
+</html>
